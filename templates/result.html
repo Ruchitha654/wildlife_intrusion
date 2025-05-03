@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Prediction Result</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: url("/static/wild_bg.jpg") no-repeat center center fixed;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .result-box {
+        background: rgba(255, 255, 255, 0.95);
+        padding: 40px 30px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        max-width: 450px;
+        width: 100%;
+      }
+
+      h2 {
+        color: #2c3e50;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      img {
+        max-width: 100%;
+        max-height: 300px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        margin-top: 15px;
+      }
+
+      a {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 12px 25px;
+        background-color: #2980b9;
+        color: white;
+        text-decoration: none;
+        font-size: 16px;
+        border-radius: 6px;
+        transition: background-color 0.3s ease;
+      }
+
+      a:hover {
+        background-color: #1f5f8b;
+      }
+
+      @media (max-width: 500px) {
+        .result-box {
+          padding: 30px 20px;
+          max-width: 90%;
+        }
+
+        h2 {
+          font-size: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="result-box">
+      <h2>Prediction: {{ prediction }}</h2>
+      <img src="{{ image_path }}" alt="Uploaded Image" />
+      <br />
+      <a href="/">Try Another Image</a>
+    </div>
+  </body>
+</html>
